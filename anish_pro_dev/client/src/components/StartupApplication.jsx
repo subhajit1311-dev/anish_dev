@@ -269,13 +269,11 @@ function StartupApplication() {
         await DocumentAPI.upload(item.file, { doc_category_declared: item.category })
       }
 
-      alert('Startup creation done successfully')
-      navigate('/StartupOwner/application/submitted')
+      navigate('/StartupOwner/profile')
     } catch (error) {
-      const msg = error?.message || ''
-      // If duplicate key error occurs, treat as success per requirement
-      // Do not treat as success anymore; now success only after documents upload
-      alert('Create startup failed')
+      // Suppress alerts per requirement; still navigate to profile page
+      console.error('Create startup failed', error)
+      navigate('/StartupOwner/profile')
     } finally {
       setIsSubmitting(false)
     }

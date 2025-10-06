@@ -14,6 +14,7 @@ import UserDashboard from './components/UserDashboard'
 import UserProfileEdit from './components/UserProfileEdit'
 import UserProfileView from './components/UserProfileView'
 import SubmittedApplication from './components/SubmittedApplication'
+import StartupOwnerProfile from './components/StartupOwnerProfile'
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
           <Route path="/user/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} />
           <Route path="/user/dashboard" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
           <Route path="/user/profile/view" element={<PrivateRoute><UserProfileView /></PrivateRoute>} />
-          <Route path="/StartupOwner/application/submitted" element={<PrivateRoute><SubmittedApplication /></PrivateRoute>} />
+            <Route path="/StartupOwner/application/submitted" element={<PrivateRoute><SubmittedApplication /></PrivateRoute>} />
+            <Route path="/StartupOwner/profile" element={<PrivateRoute><StartupOwnerProfile /></PrivateRoute>} />
           <Route path="/user/profile/edit" element={<PrivateRoute><UserProfileEdit /></PrivateRoute>} />
         </Routes>
       </Router>
